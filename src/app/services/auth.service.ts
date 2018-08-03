@@ -51,7 +51,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    const data = {username, password};
+    const data = { username, password };
 
     return this.httpClient.post(`${this.baseUrl}/login`, data, options)
       .toPromise();
@@ -61,7 +61,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.baseUrl}/logout`, options)
+    return this.httpClient.post(`${this.baseUrl}/logout`, null, options)
       .toPromise();
    }
 
