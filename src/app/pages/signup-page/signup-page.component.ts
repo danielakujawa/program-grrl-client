@@ -14,6 +14,7 @@ export class SignupPageComponent implements OnInit {
   processing = false;
   username: string;
   password: string;
+  name: string;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -24,7 +25,8 @@ export class SignupPageComponent implements OnInit {
         this.processing = true;
         this.authService.signup(this.username, this.password)
           .then((result) => {
-            this.router.navigate(['/']);
+            this.name = result.username;
+            this.router.navigate(['/signup']);
           })
           .catch((err) => {
             this.error = err.error; //
