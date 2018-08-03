@@ -7,20 +7,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { AuthService } from './services/auth.service';
+import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireUserGuard } from './guards/require-user.guard';
 
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { EditProfilePageComponent } from './pages/edit-profile-page/edit-profile-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
-  { path: 'signup', component: SignupPageComponent },
-  { path: 'login', component: LoginPageComponent }
+  { path: 'signup', component: SignupPageComponent, canActivate: [  RequireAnonGuard ] },
+  { path: 'login', component: LoginPageComponent, canActivate: [  RequireAnonGuard ] },
+  { path: 'profile', component: EditProfilePageComponent, canActivate: [  RequireUserGuard ] },
+  { path: '**', component: NotFoundPageComponent, canActivate: [  RequireUserGuard ] }
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    EditProfilePageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,10 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    RequireAnonGuard,
+    RequireUserGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
