@@ -6,14 +6,13 @@ import { Subject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserService {
   private user: any;
   private userChange: Subject<any> = new Subject();
 
-  private baseUrl = 'http://localhost:3000/auth';
+  private baseUrl = 'http://localhost:3000/user';
 
   userChange$: Observable<any> = this.userChange.asObservable();
-
 
   constructor(private httpClient: HttpClient) { }
 
@@ -37,36 +36,26 @@ export class AuthService {
       });
   }
 
-  signup(username: string, password: string): Promise<any> {
+  // me(name: string): Promise<any> {
+  //   const options = {
+  //     withCredentials: true
+  //   };
+  //   const data = {name};
+
+  //   return this.httpClient.post(`${this.baseUrl}/me`, data, options)
+  //     .toPromise();
+  // }
+
+  homepage(): Promise<any> {
     const options = {
       withCredentials: true
     };
-    const data = {username, password};
 
-    return this.httpClient.post(`${this.baseUrl}/signup`, data, options)
+    return this.httpClient.post(`${this.baseUrl}/homepage`, options)
       .toPromise();
   }
-
-  login(username: string, password: string): Promise<any> {
-    const options = {
-      withCredentials: true
-    };
-    const data = { username, password };
-
-    return this.httpClient.post(`${this.baseUrl}/login`, data, options)
-      .toPromise();
-  }
-
-  logout() {
-    const options = {
-      withCredentials: true
-    };
-    return this.httpClient.post(`${this.baseUrl}/logout`, null, options)
-      .toPromise();
-   }
 
   getUser(): any {
     return this.user;
   }
-
 }

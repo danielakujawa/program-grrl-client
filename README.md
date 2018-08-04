@@ -103,7 +103,6 @@ Init Auth, Require User, Require Anon, Require Profile Owner, Require Sponsor
 ## Models
 
   User model 
-  ojo agregar type: applicant / sponsor
 
   ```
   User {
@@ -143,7 +142,7 @@ Init Auth, Require User, Require Anon, Require Profile Owner, Require Sponsor
     description: {
       type: string,
     },
-    programming-languages: [{
+    programmingLanguages: [{
       type: String,
       enum: ['javascript', 'python', 'ruby', 'java', 'otro']
     }],
