@@ -1,39 +1,40 @@
-<section>
-  <div>
-    <h1>Programming for Grrls and women</h1>
+<section class="hero-home">
+  <div class="container">
+    <h1>Get started on web development</h1>
   </div> 
 </section>
 
 <section>
-  <div>
-    <h2>What is ProgramGrrl?</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit
-    gravida, feugiat donec suspendisse sed imperdiet
-    habitant lectus natoque, vestibulum velit augue euismod 
-    proin montes eros. Auctor erat volutpat donec ultrices 
-    facilisis venenatis sociosqu dis habitasse, facilisi 
-    ligula integer quis ullamcorper etiam duis aenean 
-    vehicula, curae suspendisse dapibus posuere ad accumsan 
-    conubia fermentum.</p>
+  <div class="container home-content">
+    <h2>PROGRAMMING FOR GIRLS AND WOMEN
+    </h2>
+    <p>Our aim is to provide  a community were professional 
+      programers can act as volunteers and help women that 
+      are starting to get involved in programming.
+
+      Learn basic programming and get introduced to the world 
+      of technology. ProgramGrrrl is a non-profit volunteer 
+      community.</p>
   </div>
 
-  <div>
-    <img src="" alt="">
-    <h3>Meet Daniela</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit
-    gravida, feugiat donec suspendisse sed imperdiet
-    habitant lectus natoque, vestibulum velit augue euismod 
-    proin montes eros.</p>
-    <a href="">I wanna learn</a>  
+  <div class="container home-content card-home">
+    <img src="../../../assets/images/daniela.png" class="profile-pic-home" alt="">
+    <div class="card-home-content">
+      <h3>MEET DANIELA FROM VENEZUELA</h3>
+      <p>She was interested in coding but didn’t know exactly where to start. She tried viewing some videos on YouTube but quickly got stucked and didn’t have somebody to answer her questions.
+      <br><br>
+      Until, she got to ProgramGrrrl and started learning.</p>
+      <a [routerLink]="['/signup']" class="button">I WANNA LEARN</a>
+    </div> 
   </div>
-
-  <div>
-    <img src="" alt="">
-    <h3>and Montse</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit
-    gravida, feugiat donec suspendisse sed imperdiet
-    habitant lectus natoque, vestibulum velit augue euismod 
-    proin montes eros.</p>
-    <a href="">Become a Sponsor</a>
-  </div>   
+  <div class="container home-content card-home">
+    <img src="../../../assets/images/montse.png" class="profile-pic-home" alt="">
+    <div class="card-home-content">
+      <h3>MEET MONTSE FROM SPAIN</h3>
+      <p>Montse registered in ProgramGrrrl as a Sponsor and got in touch with Daniela. 
+      <br><br>
+      She has helped many, serving as a coach, a mentor or as a teacher.</p>
+      <a [routerLink]="['/signup']" class="button">START HELPING OTHERS</a>
+    </div> 
+  </div>
 </section>

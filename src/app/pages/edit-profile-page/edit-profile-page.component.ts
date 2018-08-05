@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,14 +14,14 @@ export class EditProfilePageComponent implements OnInit {
   processing = false;
   name: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      this.authService.me(this.name)
+      this.userService.me()
         .then((result) => {
           this.name = result.name;
           this.router.navigate(['profile/:id/edit']);

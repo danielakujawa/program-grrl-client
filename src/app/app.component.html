@@ -1,25 +1,32 @@
 <header id="site-header">
-  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-    <div *ngIf="loading">
+  <nav [ngClass]="{'is-user': user, 'is-anon': anon}" class="navbar">
+    <!-- <div *ngIf="loading">
       <span class="username text">loading...</span>
+    </div> -->
+    <div class="container logo">
+      <a [routerLink]="['/']"><img src="../assets/images/logo.png" alt="logo"></a>
+    </div> 
+    <div *ngIf="!loading && !!user" class="profile-name">
+      <a [routerLink]="['/']">{{user.username}}</a>
+      <a (click)="logout()">LOGOUT</a>
     </div>
-    <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/profile']">{{user.username}}</a>
-      <a (click)="logout()">logout</a>
+    <div *ngIf="!loading && anon" class="auth">
+      <a [routerLink]="['/login']">LOGIN</a>
+      <a [routerLink]="['/signup']">REGISTER</a>
     </div>
-    <div *ngIf="!loading && anon">
-      <a [routerLink]="['/login']">login</a>
-      <a [routerLink]="['/signup']">signup</a>
-    </div>
-  </div>
+  </nav>
 </header>
 
-<div id="site-main" class="container">
+<div id="site-main" >
   <router-outlet></router-outlet>
 </div>
   
 <footer id="site-footer">
+    <div *ngIf="!loading && anon" class="auth">
+        <a [routerLink]="['/login']">LOGIN</a>
+        <a [routerLink]="['/signup']">REGISTER</a>
+      </div>
   <div class="container">
-      nice footer
+    <p>&copy; PROGRAMMGRRL</p>
   </div>
 </footer>

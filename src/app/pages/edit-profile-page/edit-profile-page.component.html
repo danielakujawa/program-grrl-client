@@ -44,7 +44,7 @@
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && descriptionField.errors}">
       <label>Describe yourself</label>
-      <input type="description" name="description" [(ngModel)]="description" #descriptionField="ngModel" required minlength="6" [disabled]="processing"/>
+      <textarea type="description" name="description" [(ngModel)]="description" #descriptionField="ngModel" required minlength="6" [disabled]="processing"></textarea>
       <div *ngIf="feedbackEnabled && descriptionField.errors">
         <p *ngIf="descriptionField.errors.required" class="validation">description required</p>
         <p *ngIf="descriptionField.errors.minlength" class="validation">Description is too short</p>
@@ -64,4 +64,20 @@
         <p *ngIf="programmingLanguagesField.errors.required" class="validation">programmingLanguages required</p>
       </div>
     </div>
+
+    <div class="field submit">
+      <button type="submit" [disabled]="processing">Save</button>
+      <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+  
+      <div *ngIf="error" class="validation">
+        <div [ngSwitch]="error.code">
+          <!-- hace username menos not menos unique necesario " ' -->
+          <p *ngSwitchCase="'username-not-unique'">Username is taken</p>
+          <p *ngSwitchDefault>An unexpected error ocurred</p>
+        </div>
+      </div>
+    </div>
+    
 </form> 
