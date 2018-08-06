@@ -1,6 +1,5 @@
 <h1>SIGN UP</h1>
 
-{{name}}
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
@@ -19,6 +18,14 @@
       <p *ngIf="passwordField.errors.required" class="validation">password required</p>
       <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
     </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+    <select name="userType" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+      <option value="">Choose your category</option>
+      <option value="applicant">I wanna learn</option>
+      <option value="sponsor">I wanna help others</option>
+    </select>
   </div>
 
   <div class="field submit">

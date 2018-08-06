@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppComponent } from './app.component';
 
 import { AuthService } from './services/auth.service';
@@ -16,15 +17,18 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { EditProfilePageComponent } from './pages/edit-profile-page/edit-profile-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ApplicationCardComponent } from './components/application-card/application-card.component';
 import { ProfileDetailPageComponent } from './pages/profile-detail-page/profile-detail-page.component';
+import { ApplicantsListComponent } from './pages/applicants-list/applicants-list.component';
+
+import { ApplicationCardComponent } from './components/application-card/application-card.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupPageComponent, canActivate: [  RequireAnonGuard ] },
   { path: 'login', component: LoginPageComponent, canActivate: [  RequireAnonGuard ] },
-  { path: 'edit-profile', component: EditProfilePageComponent, canActivate: [  RequireUserGuard ] },
+  { path: 'profile/:id/edit', component: EditProfilePageComponent, canActivate: [  RequireUserGuard ] },
   { path: '', component: HomePageComponent, canActivate: [  InitAuthGuard ] },
-  { path: 'profile-detail', component: ProfileDetailPageComponent, canActivate: [  RequireUserGuard ] },
+  { path: 'profile/:id', component: ProfileDetailPageComponent, canActivate: [  RequireUserGuard ] },
+  { path: 'applicants', component: ApplicantsListComponent, canActivate: [  RequireUserGuard ] },
   { path: '**', component: NotFoundPageComponent, canActivate: [  RequireUserGuard ] }
 
 ];
@@ -37,8 +41,9 @@ const routes: Routes = [
     EditProfilePageComponent,
     NotFoundPageComponent,
     HomePageComponent,
-    ApplicationCardComponent,
     ProfileDetailPageComponent,
+    ApplicantsListComponent,
+    ApplicationCardComponent
   ],
   imports: [
     BrowserModule,

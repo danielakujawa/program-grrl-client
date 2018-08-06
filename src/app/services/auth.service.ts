@@ -37,11 +37,11 @@ export class AuthService {
       });
   }
 
-  signup(username: string, password: string): Promise<any> {
+  signup(username: string, password: string, userType: string): Promise<any> {
     const options = {
       withCredentials: true
     };
-    const data = {username, password};
+    const data = {username, password, userType};
 
     return this.httpClient.post(`${this.baseUrl}/signup`, data, options)
       .toPromise();

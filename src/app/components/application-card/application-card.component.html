@@ -1,3 +1,10 @@
-<p>
-  application-card works!
-</p>
+<div class="container home-content card-home">
+    <img src="{{user.image}}" class="profile-pic-home" alt="default-image">
+    <div class="card-home-content">
+      <h3>{{user.name}}</h3>
+      <p>{{user.description}}</p>
+      <p>Interested in:</p>
+      <p>aquí va el select multiple</p>
+      <a [routerLink]="['/applications']" class="button">VIEW HER PROFILE</a>
+    </div> 
+  </div>

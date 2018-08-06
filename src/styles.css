@@ -116,6 +116,7 @@ p {
 
 .hero-home h1 {
   color: #FFFFFF;
+  text-shadow: 2px 2px 10px #000000;
 }
 
 .home-content h2 {

@@ -1,3 +1,28 @@
-<p>
-  profile-detail-page works!
-</p>
+<div *ngIf="user">
+
+
+<img src="{{user.image}}" alt="hero-picture">
+<h3>{{user.name}}</h3>
+<div>
+  <p>Location:</p>
+  <p>{{user.country}}</p>
+</div>
+<div>
+  <p>Email:</p>
+  <p>{{user.email}}</p>
+</div>
+<div>
+  <p>Languages:</p>
+  <p>{{user.languages}}</p>
+</div>
+<div>
+  <p>Description:</p>
+  <p>{{user.description}}</p>
+</div>
+<div>
+  <p>Interested in:</p>
+  <!-- <p>{{user.programmingLanguages[]}}</p> -->
+</div>
+<a>Sponsor</a>
+
+</div>

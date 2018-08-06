@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-profile-detail-page',
@@ -6,10 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-detail-page.component.css']
 })
 export class ProfileDetailPageComponent implements OnInit {
+  user: any;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) {
+    this.route.params.subscribe((params) => {
+      this.userService.getOne(params.id)
+      .then((userData) => {
+        this.user = userData;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    });
+   }
+
 
   ngOnInit() {
+
   }
 
 }

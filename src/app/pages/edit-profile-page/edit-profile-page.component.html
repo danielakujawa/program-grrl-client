@@ -45,11 +45,11 @@
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && programmingLanguagesField.errors}">
       <label>Programming languages you want to learn</label>
       <select multiple type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
-          <option value="javascript">Javascript</option>
-          <option value="python">Python</option>
-          <option value="ruby">Ruby</option>
-          <option value="java">Java</option>
-          <option value="others">Others</option>
+        <option value="javascript">Javascript</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="java">Java</option>
+        <option value="others">Others</option>
         </select>
       <div *ngIf="feedbackEnabled && programmingLanguagesField.errors">
         <p *ngIf="programmingLanguagesField.errors.required" class="validation">programmingLanguages required</p>

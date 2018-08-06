@@ -7,7 +7,7 @@
       <a [routerLink]="['/']"><img src="../assets/images/logo.png" alt="logo"></a>
     </div> 
     <div *ngIf="!loading && !!user" class="profile-name">
-      <a [routerLink]="['/']">{{user.username}}</a>
+      <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
       <a (click)="logout()">LOGOUT</a>
     </div>
     <div *ngIf="!loading && anon" class="auth">

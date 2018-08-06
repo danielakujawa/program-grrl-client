@@ -83,7 +83,6 @@
 
 ## Components
 
-- Navbar component
 - Application Card component
 
 

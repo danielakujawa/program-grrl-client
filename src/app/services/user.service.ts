@@ -21,4 +21,20 @@ export class UserService {
       .toPromise();
   }
 
+  getOne(userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+
+    return this.httpClient.get(`${this.baseUrl}/${userId}`, options)
+      .toPromise();
+  }
+
+  getAllApplicants(): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/applicants`, options)
+    .toPromise();
+  }
 }

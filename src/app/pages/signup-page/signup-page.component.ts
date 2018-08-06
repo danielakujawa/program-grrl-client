@@ -14,29 +14,32 @@ export class SignupPageComponent implements OnInit {
   processing = false;
   username: string;
   password: string;
-  name: string;
+  userType: string;
+  // user: any;
+
+
 
   constructor(private authService: AuthService, private router: Router) { }
 
-    submitForm(form) {
-      this.error = '';
-      this.feedbackEnabled = true;
-      if (form.valid) {
-        this.processing = true;
-        this.authService.signup(this.username, this.password)
-          .then((result) => {
-            this.name = result.username;
-            this.router.navigate(['/signup']);
-          })
-          .catch((err) => {
-            this.error = err.error; //
-            this.processing = false;
-            this.feedbackEnabled = false;
-          });
-      }
-    }
-
   ngOnInit() {
+    // this.user = this.authService.getUser();
+  }
+
+  submitForm(form) {
+    this.error = '';
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      this.processing = true;
+      this.authService.signup(this.username, this.password, this.userType)
+        .then((result) => {
+          this.router.navigate(['/profile', result._id, 'edit']);
+        })
+        .catch((err) => {
+          this.error = err.error; //
+          this.processing = false;
+          this.feedbackEnabled = false;
+        });
+    }
   }
 
 }
