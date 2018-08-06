@@ -17,12 +17,14 @@ import { EditProfilePageComponent } from './pages/edit-profile-page/edit-profile
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ApplicationCardComponent } from './components/application-card/application-card.component';
+import { ProfileDetailPageComponent } from './pages/profile-detail-page/profile-detail-page.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupPageComponent, canActivate: [  RequireAnonGuard ] },
   { path: 'login', component: LoginPageComponent, canActivate: [  RequireAnonGuard ] },
   { path: 'edit-profile', component: EditProfilePageComponent, canActivate: [  RequireUserGuard ] },
   { path: '', component: HomePageComponent, canActivate: [  InitAuthGuard ] },
+  { path: 'profile-detail', component: ProfileDetailPageComponent, canActivate: [  RequireUserGuard ] },
   { path: '**', component: NotFoundPageComponent, canActivate: [  RequireUserGuard ] }
 
 ];
@@ -36,6 +38,7 @@ const routes: Routes = [
     NotFoundPageComponent,
     HomePageComponent,
     ApplicationCardComponent,
+    ProfileDetailPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ const routes: Routes = [
   ],
   providers: [AuthService,
     RequireAnonGuard,
-    RequireUserGuard
+    RequireUserGuard,
+    InitAuthGuard
   ],
   bootstrap: [AppComponent]
 })
