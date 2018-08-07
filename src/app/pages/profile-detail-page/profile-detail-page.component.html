@@ -1,6 +1,7 @@
+<div *ngIf="user.userType === 'sponsor' && user.complete === true">
+  <div><a [routerLink]="['/applicants']">See applicants</a></div>
+</div>
 <div *ngIf="user">
-
-<div><a [routerLink]="['/applicants']">See applicants</a></div>
 
 <img src="{{user.image}}" alt="hero-picture">
 <h3>{{user.name}}</h3>

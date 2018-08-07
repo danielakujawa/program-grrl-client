@@ -18,6 +18,7 @@ export class EditProfilePageComponent implements OnInit {
   languages: string;
   description: string;
   programmingLanguages: string;
+  complete: false;
 
 
   constructor(private userService: UserService, private router: Router) { }
@@ -27,6 +28,7 @@ export class EditProfilePageComponent implements OnInit {
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
+      this.user.complete = true;
       this.userService.updateOne(form.value)
         .then((updatedUser) => {
           this.router.navigate(['profile', updatedUser._id]);

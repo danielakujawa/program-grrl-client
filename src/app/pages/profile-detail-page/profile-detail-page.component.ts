@@ -18,16 +18,17 @@ export class ProfileDetailPageComponent implements OnInit {
       this.userService.getOne(params.id)
       .then((userData) => {
         this.user = userData;
+        this.user.programmingLanguages= this.user.programmingLanguages.join(", ");
       })
       .catch((err) => {
         console.log(err);
       });
-    });
+    }); 
    }
 
-
+  
   ngOnInit() {
-
+    
   }
 
 }
