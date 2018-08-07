@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 import { Subject, Observable } from 'rxjs';
 
@@ -8,7 +9,7 @@ import { Subject, Observable } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:3000/user';
+  private baseUrl = environment.apiUrl + '/user';
 
   constructor(private httpClient: HttpClient) { }
 

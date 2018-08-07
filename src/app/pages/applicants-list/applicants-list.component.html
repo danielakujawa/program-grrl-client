@@ -1,5 +1,6 @@
 <h1>THEY NEED A SPONSOR</h1>
-<div *ngFor="let applicant of applicants">
-  <app-application-card [applicant]="applicant"></app-application-card>
-</div>
-
+<ng-container *ngIf="applicants" >
+  <div *ngFor="let applicant of applicants">
+    <app-application-card [applicant]="applicant"></app-application-card>
+  </div>
+</ng-container>

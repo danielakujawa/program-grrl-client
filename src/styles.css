@@ -126,14 +126,26 @@ p {
   margin-bottom: 40px;
 }
 
+
 /* -- cards home -- */
+.cards-container{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
 
 .profile-pic-home {
   border-bottom: 10px solid #d41e1e;
 }
 .card-home {
   background: #212322;
+  margin: 0 20px 20px 20px;
+  max-width: 280px;
+  min-width: 280px;
 }
+
 .card-home-content {
   padding: 0 10px 10px 10px;
 }
@@ -161,6 +173,45 @@ p {
   padding: 20px;
   display: block;
   text-align: center;
+}
+
+/* -- web version --- home -- */
+
+@media (min-width: 767px){
+
+  .container {
+    max-width: 728px;
+    margin: 0 auto;
+  }
+
+  .hero-home{
+    background-image: url('../src/assets/images/hero-img@3x.png');
+  }
+
+  .home-content p {
+    margin-bottom: 40px;
+  }
+
+  .cards-container {
+    max-width: 728px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card-home {
+    width: 100%;
+    max-width: 280px;
+
+  }
+
+  .card-home-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-cards {
+    align-self: flex-end;
+  }
 }
 
 /* -- forms -- */
@@ -200,10 +251,5 @@ form .validation {
 form .field.has-error input {
   border: 1px solid  red;
 }
-@media (min-width: 768px) {
-.container {
-  max-width: 728px;
-  margin: 0 auto;
-}
-}
+
 

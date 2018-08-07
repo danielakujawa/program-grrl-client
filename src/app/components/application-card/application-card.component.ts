@@ -7,11 +7,13 @@ import { ApplicantsListComponent } from '../../pages/applicants-list/applicants-
   styleUrls: ['./application-card.component.css']
 })
 export class ApplicationCardComponent implements OnInit {
+
   @Input() applicant: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+
   }
 
 }

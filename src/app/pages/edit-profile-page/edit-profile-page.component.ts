@@ -13,6 +13,12 @@ export class EditProfilePageComponent implements OnInit {
   error = null;
   processing = false;
   name: string;
+  country: string;
+  email: string;
+  languages: string;
+  description: string;
+  programmingLanguages: string;
+
 
   constructor(private userService: UserService, private router: Router) { }
 
