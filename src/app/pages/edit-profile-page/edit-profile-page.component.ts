@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-edit-profile-page',
@@ -18,17 +19,19 @@ export class EditProfilePageComponent implements OnInit {
   languages: string;
   description: string;
   programmingLanguages: string;
-  complete: false;
+  complete: boolean;
+  user: any;
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private authService: AuthService) {
+    this.user = this.authService.getUser();
+   }
 
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      this.user.complete = true;
       this.userService.updateOne(form.value)
         .then((updatedUser) => {
           this.router.navigate(['profile', updatedUser._id]);

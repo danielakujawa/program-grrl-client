@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
-
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-profile-detail-page',
@@ -12,23 +12,33 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileDetailPageComponent implements OnInit {
   user: any;
+  userCanEdit: boolean;
+  userCanSponsor: boolean;
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) {
+  constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthService, private router: Router) {
     this.route.params.subscribe((params) => {
-      this.userService.getOne(params.id)
-      .then((userData) => {
-        this.user = userData;
-        this.user.programmingLanguages= this.user.programmingLanguages.join(", ");
+      const loggedUser = this.authService.getUser();
+
+       if (params.id === loggedUser._id) {
+        this.userCanEdit = true;
+       }
+
+       this.userService.getOne(params.id)
+       .then((userData) => {
+          this.user = userData;
+          this.user.programmingLanguages = this.user.programmingLanguages.join(', ');
+          if (loggedUser.userType === 'sponsor' && loggedUser.complete && this.user.userType === 'applicant') {
+            this.userCanSponsor = true;
+          }
       })
       .catch((err) => {
         console.log(err);
       });
-    }); 
+    });
    }
 
-  
+
   ngOnInit() {
-    
   }
 
 }

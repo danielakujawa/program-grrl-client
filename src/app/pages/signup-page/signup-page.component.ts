@@ -35,7 +35,7 @@ export class SignupPageComponent implements OnInit {
           this.router.navigate(['/profile', result._id, 'edit']);
         })
         .catch((err) => {
-          this.error = err.error; //
+          this.error = err.error;
           this.processing = false;
           this.feedbackEnabled = false;
         });
