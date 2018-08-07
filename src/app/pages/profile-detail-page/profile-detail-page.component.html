@@ -1,4 +1,4 @@
-<div class="container" *ngIf="user">
+<div class="container compact" *ngIf="user">
 
   <div *ngIf="user.userType === 'sponsor' && user.complete">
     <div><a [routerLink]="['/applicants']">See applicants</a></div>
@@ -10,9 +10,9 @@
   
   <img src="{{user.image}}" alt="hero-picture">
   <h3>{{user.name}}</h3>
-  <div>
-    <p>Location:</p>
-    <p>{{user.country}}</p>
+  <div class="property location">
+    <p class="label">Location:</p>
+    <p class="value">{{user.country}}</p>
   </div>
   <div>
     <p>Email:</p>

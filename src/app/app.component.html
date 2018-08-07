@@ -1,8 +1,8 @@
 <header id="site-header">
   <nav [ngClass]="{'is-user': user, 'is-anon': anon}" class="navbar">
-    <!-- <div *ngIf="loading">
+    <div *ngIf="loading">
       <span class="username text">loading...</span>
-    </div> -->
+    </div>
     <div class="container logo">
       <a [routerLink]="['/']"><img src="../assets/images/logo.png" alt="logo"></a>
     </div> 
@@ -10,7 +10,7 @@
       <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
       <a (click)="logout()">LOGOUT</a>
     </div>
-    <div *ngIf="!loading && anon" class="auth">
+    <div *ngIf="!loading && anon" class="auth-navbar">
       <a [routerLink]="['/login']">LOGIN</a>
       <a [routerLink]="['/signup']">REGISTER</a>
     </div>
@@ -22,7 +22,7 @@
 </div>
   
 <footer id="site-footer">
-    <div *ngIf="!loading && anon" class="auth">
+    <div *ngIf="!loading && anon" class="auth-navbar">
         <a [routerLink]="['/login']">LOGIN</a>
         <a [routerLink]="['/signup']">REGISTER</a>
       </div>

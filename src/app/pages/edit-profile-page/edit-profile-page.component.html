@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container compact edit-page">
 
   <h1>Complete your profile</h1>
   <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
@@ -63,8 +63,8 @@
       </div>
     </div>
     
-    <div class="field submit">
-      <button type="submit" [disabled]="processing">Save</button>
+    <div class="field">
+      <button class="button" type="submit" [disabled]="processing">Save</button>
       <div *ngIf="feedbackEnabled && form.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div>

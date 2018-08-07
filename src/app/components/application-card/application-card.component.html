@@ -1,10 +1,12 @@
-<div class="container home-content card-home">
-  <img src="{{applicant.image}}" class="profile-pic-home" alt="default-image">
-  <div class="card-home-content">
-    <h3>{{applicant.name}}</h3>
-    <p>{{applicant.description}}</p>
-    <p>Interested in:</p>
-    <p>{{applicant.programmingLanguages}}</p>
-    <a [routerLink]="['/profile', applicant._id]" class="button">VIEW HER PROFILE</a>
-  </div> 
-</div>
+
+  <div class="container home-content card-home">
+    <img src="{{applicant.image}}" class="profile-pic-home" alt="default-image">
+    <div class="card-home-content">
+      <h3>{{applicant.name}}</h3>
+      <p>{{applicant.description}}</p>
+      <p>Interested in:</p>
+      <p>{{applicant.programmingLanguages}}</p>
+      <a [routerLink]="['/profile', applicant._id]" class="button">view her profile</a>
+    </div> 
+  </div>
+  

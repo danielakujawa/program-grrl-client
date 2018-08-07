@@ -68,7 +68,8 @@
   - user.updateOne(data)
   - user.getAllApplicants()
   - user.getOne(id)
-  - user.sponsorOne(applicantId)	
+  - user.sponsorOne(applicantId)	// .post(/user/:applicantId/sponsor
+, null, options)
 
 
 ## Pages
@@ -165,3 +166,7 @@ Init Auth, Require User, Require Anon, Require Profile Owner, Require Sponsor
   - GET /user/applicants // only with userType = applicant && complete = true && with sponsor = null
   - GET /user/:id
   - POST /user/:applicantId/sponsor
+
+    - modify the req.params.applicantId
+    - set the sponsort: req.session.currentId
+    - User.findByIdAndUpdate()
