@@ -4,7 +4,7 @@
     <h3>{{applicant.name}}</h3>
     <p>{{applicant.description}}</p>
     <p>Interested in:</p>
-    <p>aquí va el select multiple</p>
-    <!-- <a [routerLink]="['/profile', user._id]" class="button">VIEW HER PROFILE</a> -->
+    <p>{{applicant.programmingLanguages}}</p>
+    <a [routerLink]="['/profile', applicant._id]" class="button">VIEW HER PROFILE</a>
   </div> 
 </div>
