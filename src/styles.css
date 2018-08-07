@@ -94,6 +94,14 @@ p {
   margin: 0 20px;
 }
 
+@media(min-width: 520px){
+  
+  .container.compact {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
 .section {
   padding: 20px;
 }
@@ -105,7 +113,8 @@ p {
 .hero-home {
   background-image: url('../src/assets/images/hero-img.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: 50% 20%;
   height: 320px;
   max-height: 320px;
   color: #FFFFFF;
@@ -169,15 +178,23 @@ p {
   font-weight: bold;
   border-radius: 4px;
   background-color: #ff3636;
-  width: 260px;
-  padding: 20px;
+  width: 100%;
+  line-height: 55px;
   display: block;
   text-align: center;
 }
 
+.button.ghost {
+  color: red;
+  border-color: blue;
+  background-color: black;
+}
+
+
+
 /* -- web version --- home -- */
 
-@media (min-width: 767px){
+@media (min-width: 767px ){
 
   .container {
     max-width: 728px;
@@ -185,7 +202,7 @@ p {
   }
 
   .hero-home{
-    background-image: url('../src/assets/images/hero-img@3x.png');
+    background-image: url('../src/assets/images/img-desktop@3x.png');
   }
 
   .home-content p {
@@ -219,6 +236,7 @@ p {
 form.is-processing {
   opacity: 0.5;
 }
+
 form .field {
   margin-bottom: 20px;
 }
@@ -228,29 +246,42 @@ form label {
   margin-bottom: 10px;
   font-style: bold;
 }
+
 form input {
-padding: 10px;
-font-size: 16px;
-border-radius: 4px;      
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;      
+}
+
+form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;      
 }
 
 form .submit {
-padding-top: 20px;
+  padding-top: 20px;
 }
+
 form .submit button {
-padding: 5px 20px;
-text-align: center;
-font-size: 16px;
-background-color: rgb(224, 224, 224);
-cursor: pointer;
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgb(224, 224, 224);
+  cursor: pointer;
 }
+
 form .field.has-error label {
   color: red;
 }
+
 form .validation {
   margin: 5px 0 10px;
   color: red;
 }
+
 form .field.has-error input {
   border: 1px solid  red;
 }

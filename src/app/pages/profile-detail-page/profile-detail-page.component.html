@@ -1,4 +1,4 @@
-<div *ngIf="user">
+<div class="container" *ngIf="user">
 
   <div *ngIf="user.userType === 'sponsor' && user.complete">
     <div><a [routerLink]="['/applicants']">See applicants</a></div>

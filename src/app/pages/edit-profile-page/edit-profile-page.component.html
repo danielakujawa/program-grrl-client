@@ -1,6 +1,8 @@
-<h1>Complete your profile</h1>
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+<div class="container">
 
+  <h1>Complete your profile</h1>
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && nameField.errors}">
       <label>Name</label>
       <input type="text" name="name" [(ngModel)]="name" #nameField="ngModel" [disabled]="processing"/>
@@ -8,7 +10,7 @@
         <p *ngIf="nameField.errors.required" class="validation">name required</p>
       </div>
     </div>
-  
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && countryField.errors}">
       <label>Country</label>
       <input type="country" name="country" [(ngModel)]="country" #countryField="ngModel" required minlength="6" [disabled]="processing"/>
@@ -16,7 +18,7 @@
         <p *ngIf="countryField.errors.required" class="validation">country required</p>
       </div>
     </div>
-
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && emailField.errors}">
       <label>Email</label>
       <input type="email" name="email" [(ngModel)]="email" #emailField="ngModel" required minlength="6" [disabled]="processing"/>
@@ -24,7 +26,7 @@
         <p *ngIf="emailField.errors.required" class="validation">email required</p>
       </div>
     </div>
-
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && languagesField.errors}">
       <label>Languages you can communicate with:</label>
       <input type="languages" name="languages" [(ngModel)]="languages" #languagesField="ngModel" required minlength="6" [disabled]="processing"/>
@@ -32,7 +34,7 @@
         <p *ngIf="languagesField.errors.required" class="validation">languages required</p>
       </div>
     </div>
-
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && descriptionField.errors}">
       <label>Describe yourself</label>
       <textarea type="description" name="description" [(ngModel)]="description" #descriptionField="ngModel" required minlength="6" [disabled]="processing"></textarea>
@@ -41,32 +43,32 @@
         <p *ngIf="descriptionField.errors.minlength" class="validation">Description is too short</p>
       </div>
     </div>
-
+    
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && programmingLanguagesField.errors}">
       <div *ngIf="user.userType === 'sponsor'">
         <label>Programming languages you can help with</label>
       </div>
       <div *ngIf="user.userType === 'applicant'">
-          <label>Programming languages you wanna learn</label>
-        </div>
+        <label>Programming languages you wanna learn</label>
+      </div>
       <select multiple type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
         <option value="javascript">Javascript</option>
         <option value="python">Python</option>
         <option value="ruby">Ruby</option>
         <option value="java">Java</option>
         <option value="others">Others</option>
-        </select>
+      </select>
       <div *ngIf="feedbackEnabled && programmingLanguagesField.errors">
         <p *ngIf="programmingLanguagesField.errors.required" class="validation">programmingLanguages required</p>
       </div>
     </div>
-
+    
     <div class="field submit">
       <button type="submit" [disabled]="processing">Save</button>
       <div *ngIf="feedbackEnabled && form.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div>
-  
+      
       <div *ngIf="error" class="validation">
         <div [ngSwitch]="error.code">
           <!-- hace username menos not menos unique necesario " ' -->
@@ -76,4 +78,5 @@
       </div>
     </div>
     
-</form> 
+  </form> 
+</div>
