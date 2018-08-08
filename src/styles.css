@@ -121,7 +121,6 @@ p {
   background-size: cover;
   background-position: 50% 20%;
   height: 320px;
-  max-height: 320px;
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -135,7 +134,6 @@ p {
 
 .home-content {
   padding-top: 20px;
-  margin-bottom: 40px;
 }
 
 .main-text {
@@ -227,8 +225,13 @@ p {
     margin: 0 auto;
   }
 
-  .hero-home{
-    background-image: url('../src/assets/images/img-desktop@3x.png');
+  .hero-home {
+    background-image: url('../src/assets/images/hero-v-2-desktop-copy@2x.png');
+    height: 630px;
+  }
+
+  .hero-home h1 {
+    display: none;
   }
 
   .home-content p {
@@ -239,6 +242,40 @@ p {
     max-width: 728px;
     display: flex;
     justify-content: space-between;
+    padding-top: 180px;
+    padding-bottom: 40px;
+  }
+
+  .main-text {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    width:406px;
+    height: 72px;
+    /* margin-left: 356px; */
+    margin-bottom: 40px;
+  }
+
+  .title h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #212322;
+    line-height: 1;
+    padding-right: 20px;
+  }
+
+  .texto {
+    width: 564px;
+    height: 143px;
+    font-size: 18px;
+    line-height: 1.19;
+  }
+
+  .background {
+    background-image: url('../src/assets/images/img-desktop-copy@2x.png');
   }
 
   .card-home {
@@ -278,7 +315,7 @@ form label {
   margin-bottom: 10px;
   font-style: bold;
   position: absolute;
-  top: -10px;
+  top: -11px;
   left: 10px;
   font-size: 13px;
   text-transform: lowercase;

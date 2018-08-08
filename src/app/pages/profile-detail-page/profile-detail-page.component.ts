@@ -45,9 +45,9 @@ export class ProfileDetailPageComponent implements OnInit {
   }
 
   sponsorOne(applicantId) {
-
     this.userService.sponsorOne(applicantId)
       .then((result) => {
+        this.userService.applicantOne(applicantId);
         this.router.navigate(['/profile', this.currentUser._id]);
       });
   }
