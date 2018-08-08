@@ -12,10 +12,15 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProfileDetailPageComponent implements OnInit {
   user: any;
+  currentUser: any;
   userCanEdit: boolean;
   userCanSponsor: boolean;
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthService, private router: Router) {
+
+  constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthService, private router: Router) {}
+
+
+  ngOnInit() {
     this.route.params.subscribe((params) => {
       const loggedUser = this.authService.getUser();
 
@@ -25,6 +30,7 @@ export class ProfileDetailPageComponent implements OnInit {
 
        this.userService.getOne(params.id)
        .then((userData) => {
+          this.userCanSponsor = false;
           this.user = userData;
           this.user.programmingLanguages = this.user.programmingLanguages.join(', ');
           if (loggedUser.userType === 'sponsor' && loggedUser.complete && this.user.userType === 'applicant') {
@@ -35,16 +41,18 @@ export class ProfileDetailPageComponent implements OnInit {
         console.log(err);
       });
     });
+    this.currentUser = this.authService.getUser();
   }
 
-  // sponsorOne() {
-  //   this.userService.sponsorOne(applicantId)
-  //     .then(() => this.router.navigate(['/profile', user._id]));
-  // }
+  sponsorOne(applicantId) {
 
-  ngOnInit() {
+    this.userService.sponsorOne(applicantId)
+      .then((result) => {
+        this.router.navigate(['/profile', this.currentUser._id]);
+      });
   }
 
-}
+  }
+
 
 

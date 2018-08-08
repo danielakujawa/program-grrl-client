@@ -36,7 +36,7 @@
     <p class="value">{{user.programmingLanguages}}</p> 
   </div>
   <div *ngIf="userCanSponsor">
-      <div><a (click)="sponsorOne()" class="button sponsor-button">Sponsor</a></div>
+      <div><a (click)="sponsorOne(user._id)" class="button sponsor-button">Sponsor</a></div>
   </div>
 
 </div> 

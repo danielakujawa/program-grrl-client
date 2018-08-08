@@ -39,12 +39,12 @@ export class UserService {
     .toPromise();
   }
 
-  // sponsorOne(applicantId): Promise<any> {
-  //   const options = {
-  //     withCredentials: true
-  //   };
+  sponsorOne(applicantId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
 
-  //   return this.httpClient.get(`${this.baseUrl}/${applicantId}/sponsor`, options)
-  //     .toPromise();
-  // }
+    return this.httpClient.post(`${this.baseUrl}/${applicantId}/sponsor`, null, options)
+      .toPromise();
+  }
 }
