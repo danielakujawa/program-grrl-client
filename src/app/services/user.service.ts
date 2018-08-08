@@ -38,4 +38,13 @@ export class UserService {
     return this.httpClient.get(`${this.baseUrl}/applicants`, options)
     .toPromise();
   }
+
+  // sponsorOne(applicantId): Promise<any> {
+  //   const options = {
+  //     withCredentials: true
+  //   };
+
+  //   return this.httpClient.get(`${this.baseUrl}/${applicantId}/sponsor`, options)
+  //     .toPromise();
+  // }
 }

@@ -35,10 +35,16 @@ export class ProfileDetailPageComponent implements OnInit {
         console.log(err);
       });
     });
-   }
+  }
 
+  // sponsorOne() {
+  //   this.userService.sponsorOne(applicantId)
+  //     .then(() => this.router.navigate(['/profile', user._id]));
+  // }
 
   ngOnInit() {
   }
 
 }
+
+

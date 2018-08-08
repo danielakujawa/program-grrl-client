@@ -1,37 +1,42 @@
-<div class="container compact" *ngIf="user">
+<div class="container compact profile-page" *ngIf="user">
 
-  <div *ngIf="user.userType === 'sponsor' && user.complete">
-    <div><a class="button" [routerLink]="['/applicants']">See applicants</a></div>
-  </div>
-
-  <div *ngIf="userCanEdit">
-      <div><a [routerLink]="['/profile', user._id, 'edit']">Edit</a></div>
+  
+  <div class="profile-card">
+    <div *ngIf="user.userType === 'sponsor' && user.complete">
+      <div><a class="button" [routerLink]="['/applicants']">See applicants</a></div>
+    </div>
+    <img class="profile-pic-home" src="{{user.image}}" alt="hero-picture">
   </div>
   
-  <img src="{{user.image}}" alt="hero-picture">
-  <h3>{{user.name}}</h3>
-  <div class="property location">
+  <div class="profile-name-button">
+    <h3>{{user.name}}</h3>   
+    <div *ngIf="userCanEdit">
+      <a class="edit-link" [routerLink]="['/profile', user._id, 'edit']">Edit</a>
+    </div>
+  </div>
+  
+  <div class="property">
     <p class="label">Location:</p>
     <p class="value">{{user.country}}</p>
   </div>
-  <div>
-    <p>Email:</p>
-    <p>{{user.email}}</p>
+  <div class="property">
+    <p class="label">Email:</p>
+    <p class="value">{{user.email}}</p>
   </div>
-  <div>
-    <p>Languages:</p>
-    <p>{{user.languages}}</p>
+  <div class="property">
+    <p class="label">Languages:</p>
+    <p class="value">{{user.languages}}</p>
   </div>
-  <div>
-    <p>Description:</p>
-    <p>{{user.description}}</p>
+  <div class="property">
+    <p class="label">Description:</p>
+    <p class="value">{{user.description}}</p>
   </div>
-  <div>
-    <p>Interested in:</p>
-    <p>{{user.programmingLanguages}}</p> 
+  <div class="property">
+    <p class="label">Interested in:</p>
+    <p class="value">{{user.programmingLanguages}}</p> 
   </div>
   <div *ngIf="userCanSponsor">
-      <div><a class="button" [routerLink]="['/profile', user._id]">Sponsor</a></div>
+      <div><a (click)="sponsorOne()" class="button sponsor-button">Sponsor</a></div>
   </div>
 
 </div> 
