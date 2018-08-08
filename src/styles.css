@@ -247,16 +247,17 @@ p {
   }
 
   .main-text {
-    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .title {
     width:406px;
     height: 72px;
-    /* margin-left: 356px; */
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    align-self: flex-start;
+    padding-top: 40px;
   }
 
   .title h2 {
@@ -268,10 +269,15 @@ p {
   }
 
   .texto {
-    width: 564px;
     height: 143px;
+    width: 564px;
+    margin-left: 100px;
+  }
+
+  .texto p {
     font-size: 18px;
     line-height: 1.19;
+    margin-bottom: 20px;
   }
 
   .background {
