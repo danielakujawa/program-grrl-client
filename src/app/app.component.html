@@ -4,11 +4,12 @@
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
-        <div class="container logo">
+        <div class="logo">
           <a [routerLink]="['/']"><img src="../assets/images/logo.png" alt="logo"></a>
         </div> 
         <div *ngIf="!loading && !!user" class="profile-name">
           <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
+          <span>&nbsp;|&nbsp;</span>
           <a (click)="logout()">LOGOUT</a>
         </div>
         <div *ngIf="!loading && anon" class="auth-navbar">

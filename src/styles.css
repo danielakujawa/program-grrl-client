@@ -75,8 +75,9 @@ p {
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
+
 
 #site-footer {
   color: #ffffff;
@@ -243,6 +244,8 @@ p {
   .card-home {
     width: 100%;
     max-width: 280px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .card-home-content {
@@ -253,6 +256,7 @@ p {
   .btn-cards {
     align-self: flex-end;
   }
+
 
 }
 
