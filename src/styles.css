@@ -93,6 +93,7 @@ p {
 }
 
 #site-main {
+  
 }
 
 .container {
@@ -101,10 +102,12 @@ p {
 
 @media(min-width: 520px){
   
+
   .container.compact {
     max-width: 480px;
     margin: 0 auto;
   }
+
 }
 
 .section {
@@ -206,9 +209,9 @@ p {
 
 .button.ghost {
   color: #ff3636;
-  border-color:  #ff3636;
+  border: solid 1px #ff3636;
   background-color: #212322;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 
@@ -238,7 +241,6 @@ p {
   .card-home {
     width: 100%;
     max-width: 280px;
-
   }
 
   .card-home-content {
@@ -260,7 +262,7 @@ form.is-processing {
 }
 
 form .field {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -312,24 +314,28 @@ form .submit button {
 }
 
 form .field.has-error label {
-  color: red;
+  color:#FF441A;
+  font-weight: bold;
 }
 
 form .validation {
   margin: 5px 0 10px;
-  color: red;
+  color: #FF441A;
+  font-weight: bold;
 }
 
-form .field.has-error input {
-  border: 1px solid  red;
+form .field.has-error input,
+form .field.has-error textarea,
+form .field.has-error select {
+  border: 1px solid  #FF441A;
 }
-
 
 /* -- signup & login -- */
 
 .auth-page {
   background-color: #212322;
   padding-top: 40px;
+  padding-bottom: 40px;
   min-height: calc(100vh - 223px)
 }
 
@@ -339,8 +345,11 @@ form .field.has-error input {
   margin-bottom: 40px;
 }
 
+/* -- edit page -- */
+
 .edit-page {
    padding-top: 40px;
+   padding-bottom: 60px;
 }
 
 .edit-page h1 {
@@ -348,6 +357,20 @@ form .field.has-error input {
 }
 
 .edit-page button {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
+.error-message {
+  text-align: center;
+}
+
+/* -- applicants page -- */
+
+.applicants-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.applicants-page h1 {
+  font-size: 24px;
+}

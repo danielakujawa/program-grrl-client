@@ -1,7 +1,7 @@
 <div class="container compact" *ngIf="user">
 
   <div *ngIf="user.userType === 'sponsor' && user.complete">
-    <div><a [routerLink]="['/applicants']">See applicants</a></div>
+    <div><a class="button" [routerLink]="['/applicants']">See applicants</a></div>
   </div>
 
   <div *ngIf="userCanEdit">
@@ -31,7 +31,7 @@
     <p>{{user.programmingLanguages}}</p> 
   </div>
   <div *ngIf="userCanSponsor">
-      <div><a [routerLink]="['/profile', user._id]">Sponsor</a></div>
+      <div><a class="button" [routerLink]="['/profile', user._id]">Sponsor</a></div>
   </div>
 
 </div> 

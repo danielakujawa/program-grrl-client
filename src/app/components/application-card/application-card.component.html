@@ -1,7 +1,8 @@
 
-  <div class="container home-content card-home">
+<div class="container">
+  <div class="card-home">
     <img src="{{applicant.image}}" class="profile-pic-home" alt="default-image">
-    <div class="card-home-content">
+    <div class="description">
       <h3>{{applicant.name}}</h3>
       <p>{{applicant.description}}</p>
       <p>Interested in:</p>
@@ -9,4 +10,4 @@
       <a [routerLink]="['/profile', applicant._id]" class="button">view her profile</a>
     </div> 
   </div>
-  
+</div>
