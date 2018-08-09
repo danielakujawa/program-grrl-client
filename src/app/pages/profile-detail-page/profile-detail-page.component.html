@@ -2,19 +2,23 @@
 
 <div class="container compact profile-page" *ngIf="user">
 
-  <div class="show-sponsor-applicant" *ngIf="user.userType === 'applicant' && user.complete && user.sponsor">
+  <div *ngIf="user.userType === 'applicant' && user.complete && user.sponsor">
     <h2>Your sponsor</h2>
-    <div class="status-img">
-      <img src="{{user.sponsor.image}}" alt="">
+    <div class="show-sponsor-applicant">
+      <div class="status-img">
+        <img src="{{user.sponsor.image}}" alt="">
+      </div>
+      <div class="link"><a [routerLink]="['/profile', user._id]">{{user.sponsor.name}}</a></div>
     </div>
-    <div><p>{{user.sponsor.name}}</p></div>
   </div>
-  <div *ngIf="user.userType === 'sponsor' && user.complete && user.applicant">
+    <div *ngIf="user.userType === 'sponsor' && user.complete && user.applicant">
     <h2>You are sponsoring</h2>
-    <div class="status-img">
-      <img src="{{user.applicant.image}}" alt="">
+    <div class="show-sponsor-applicant">
+      <div class="status-img">
+       <img src="{{user.applicant.image}}" alt="">
+      </div>
+      <div class="link"><a [routerLink]="['/profile', user._id]">{{user.applicant.name}}</a></div>
     </div>
-    <div><p>{{user.applicant.name}}</p></div>
   </div>
   
   

@@ -428,17 +428,21 @@ form .field.has-error select {
 
 .show-sponsor-applicant {
   display: flex;
+  border-bottom: 5px solid #212322;
 }
 
 .show-sponsor-applicant img {
-  width: 40%;
+  width: 100%;
 }
 
-
-.show-sponsor-applicant p {
-  display: inline;
+.link {
+  align-self: center;
 }
 
+.status-img {
+  width: 100px;
+  margin-right: 10px;
+}
 
 
 
