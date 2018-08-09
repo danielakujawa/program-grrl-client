@@ -32,8 +32,9 @@ export class ProfileDetailPageComponent implements OnInit {
        .then((userData) => {
           this.userCanSponsor = false;
           this.user = userData;
+          console.log(this.user);
           this.user.programmingLanguages = this.user.programmingLanguages.join(', ');
-          if (loggedUser.userType === 'sponsor' && loggedUser.complete && this.user.userType === 'applicant') {
+          if (loggedUser.userType === 'sponsor' && loggedUser.complete && !loggedUser.applicant && this.user.userType === 'applicant') {
             this.userCanSponsor = true;
           }
       })
@@ -47,12 +48,11 @@ export class ProfileDetailPageComponent implements OnInit {
   sponsorOne(applicantId) {
     this.userService.sponsorOne(applicantId)
       .then((result) => {
-        this.userService.applicantOne(applicantId);
         this.router.navigate(['/profile', this.currentUser._id]);
       });
   }
 
-  }
+}
 
 
 

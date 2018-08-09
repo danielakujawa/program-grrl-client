@@ -47,13 +47,4 @@ export class UserService {
     return this.httpClient.post(`${this.baseUrl}/${applicantId}/sponsor`, null, options)
       .toPromise();
   }
-
-  applicantOne(applicantId): Promise<any> {
-    const options = {
-      withCredentials: true
-    };
-
-    return this.httpClient.post(`${this.baseUrl}/${applicantId}/applicant`, null, options)
-      .toPromise();
-  }
 }

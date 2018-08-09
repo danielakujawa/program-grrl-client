@@ -242,7 +242,6 @@ p {
     max-width: 728px;
     display: flex;
     justify-content: space-between;
-    
   }
 
   .main-text {
@@ -426,6 +425,22 @@ form .field.has-error select {
 
 
 /* -- profile page -- */
+
+.show-sponsor-applicant {
+  display: flex;
+}
+
+.show-sponsor-applicant img {
+  width: 40%;
+}
+
+
+.show-sponsor-applicant p {
+  display: inline;
+}
+
+
+
 
 .property {
   padding: 10px 0;
