@@ -242,8 +242,7 @@ p {
     max-width: 728px;
     display: flex;
     justify-content: space-between;
-    padding-top: 180px;
-    padding-bottom: 40px;
+    
   }
 
   .main-text {
