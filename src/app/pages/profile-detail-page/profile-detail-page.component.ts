@@ -36,7 +36,7 @@ export class ProfileDetailPageComponent implements OnInit {
           this.user = data.profile;
           this.applicants = data.sponsoredUsers;
           this.user.programmingLanguages = this.user.programmingLanguages.join(', ');
-          if (loggedUser.userType === 'sponsor' && loggedUser.complete && !loggedUser.applicant && this.user.userType === 'applicant') {
+          if (loggedUser.userType === 'sponsor' && loggedUser.complete && this.user.userType === 'applicant') {
             this.userCanSponsor = true;
           }
 

@@ -28,6 +28,18 @@ export class EditProfilePageComponent implements OnInit {
     this.user = this.authService.getUser();
    }
 
+   ngOnInit() {
+     const user = this.authService.getUser();
+
+     this.image = user.image;
+     this.name = user.name;
+     this.country = user.country;
+     this.email = user.email;
+     this.languages = user.languages;
+     this.description = user.description;
+     this.programmingLanguages = user.programmingLanguages;
+   }
+
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
@@ -38,23 +50,12 @@ export class EditProfilePageComponent implements OnInit {
           this.router.navigate(['profile', updatedUser._id]);
         })
         .catch((err) => {
-          this.error = err.error; //
+          this.error = err.error;
           this.processing = false;
           this.feedbackEnabled = false;
         });
     }
   }
-      ngOnInit() {
-        const user = this.authService.getUser();
-
-        this.image = user.image;
-        this.name = user.name;
-        this.country = user.country;
-        this.email = user.email;
-        this.languages = user.languages;
-        this.description = user.description;
-        this.programmingLanguages = user.programmingLanguages;
-      }
 
 
 }

@@ -15,14 +15,14 @@ export class SignupPageComponent implements OnInit {
   username: string;
   password: string;
   userType: string;
-  // user: any;
+  user: any;
 
 
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    // this.user = this.authService.getUser();
+     this.user = this.authService.getUser();
   }
 
   submitForm(form) {
