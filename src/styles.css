@@ -395,6 +395,33 @@ form .field.has-error select {
 
 /* -- edit page -- */
 
+.select-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-option {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-img { 
+  width: 50px;
+  margin: 0px;
+}
+
+.hero-option img {
+  width: 40px;
+}
+
+.hero-option input {
+  align-self: flex-start;
+  width: 13px;
+  margin-left: 15px;
+}
+
 .edit-page {
    padding-top: 40px;
    padding-bottom: 60px;

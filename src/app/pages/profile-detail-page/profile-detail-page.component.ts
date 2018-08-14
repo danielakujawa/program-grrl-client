@@ -15,12 +15,14 @@ export class ProfileDetailPageComponent implements OnInit {
   currentUser: any;
   userCanEdit: boolean;
   userCanSponsor: boolean;
+  applicants: any;
 
 
   constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthService, private router: Router) {}
 
 
   ngOnInit() {
+
     this.route.params.subscribe((params) => {
       const loggedUser = this.authService.getUser();
 
@@ -29,13 +31,15 @@ export class ProfileDetailPageComponent implements OnInit {
        }
 
        this.userService.getOne(params.id)
-       .then((userData) => {
+       .then((data) => {
           this.userCanSponsor = false;
-          this.user = userData;
+          this.user = data.profile;
+          this.applicants = data.sponsoredUsers;
           this.user.programmingLanguages = this.user.programmingLanguages.join(', ');
           if (loggedUser.userType === 'sponsor' && loggedUser.complete && !loggedUser.applicant && this.user.userType === 'applicant') {
             this.userCanSponsor = true;
           }
+
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +50,7 @@ export class ProfileDetailPageComponent implements OnInit {
 
   sponsorOne(applicantId) {
     this.userService.sponsorOne(applicantId)
-      .then((result) => {
+      .then((applicants) => {
         this.router.navigate(['/profile', this.currentUser._id]);
       });
   }

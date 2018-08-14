@@ -3,6 +3,43 @@
   <h1>Complete your profile</h1>
   <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
     
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && imageField.errors}">
+      <label>Choose your hero:</label>
+      <div class="select-img">
+        <div class="hero-option">
+          <div class="hero-img">
+            <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/fabiola.jpg" alt="">
+          </div>
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/fabiola.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+        </div>
+        <div class="hero-option">
+          <div class="hero-img">
+            <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/cate.jpg" alt="">
+          </div>
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/cate.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+        </div>
+        <div class="hero-option">
+          <div class="hero-img">
+            <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/filipe.jpg" alt="">
+          </div>
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/filipe.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+        </div>
+        <div class="hero-option">
+          <div class="hero-img">
+            <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/daniela.jpg" alt="">
+          </div>
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/daniela.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+        </div>
+        <div class="hero-option">
+          <div class="hero-img">
+            <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/andrea.jpg" alt="">
+          </div>
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/andrea.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+        </div>
+      </div>
+        
+    </div>
+
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && nameField.errors}">
       <label>Name</label>
       <input type="text" name="name" [(ngModel)]="name" #nameField="ngModel" required [disabled]="processing"/>

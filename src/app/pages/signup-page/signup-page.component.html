@@ -21,12 +21,10 @@
         </div>
       </div>
       
-      <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
-        <select name="userType" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
-          <option value="" selected disabled hidden>Choose your category</option>
-          <option value="applicant">I wanna learn</option>
-          <option value="sponsor">I wanna help others</option>
-        </select>
+      <div class="field" [ngClass]="{'has-error': feedbackEnabled && userTypeField.errors}">
+         <label>I wanna learn</label> 
+        <input name="userType" type="radio" value="applicant" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+        <input name="userType" type="radio" value="sponsor" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
       </div>
       
       <div class="field">

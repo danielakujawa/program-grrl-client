@@ -43,16 +43,16 @@ export class EditProfilePageComponent implements OnInit {
         });
     }
   }
+      ngOnInit() {
+        const user = this.authService.getUser();
 
-  ngOnInit() {
-    const user = this.authService.getUser();
+        this.name = user.name;
+        this.country = user.country;
+        this.email = user.email;
+        this.languages = user.languages;
+        this.description = user.description;
+        this.programmingLanguages = user.programmingLanguages;
+      }
 
-    this.name = user.name;
-    this.country = user.country;
-    this.email = user.email;
-    this.languages = user.languages;
-    this.description = user.description;
-    this.programmingLanguages = user.programmingLanguages;
-  }
 
 }

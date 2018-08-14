@@ -1,5 +1,3 @@
-
-
 <div class="container compact profile-page" *ngIf="user">
 
   <div *ngIf="user.userType === 'applicant' && user.complete && user.sponsor">
@@ -11,13 +9,13 @@
       <div class="link"><a [routerLink]="['/profile', user.sponsor._id]">{{user.sponsor.name}}</a></div>
     </div>
   </div>
-    <div *ngIf="user.userType === 'sponsor' && user.complete && user.applicant">
+    <div *ngIf="user.userType === 'sponsor' && user.complete">
     <h2>Sponsoring</h2>
-    <div class="show-sponsor-applicant">
+    <div *ngFor = "let applicant of applicants" class="show-sponsor-applicant">
       <div class="status-img">
-       <img src="{{user.applicant.image}}" alt="">
+       <img src="{{applicant.image}}" alt="">
       </div>
-      <div class="link"><a [routerLink]="['/profile', user.applicant._id]">{{user.applicant.name}}</a></div>
+      <div class="link"><a [routerLink]="['/profile', applicant._id]">{{applicant.name}}</a></div>
     </div>
   </div>
   
