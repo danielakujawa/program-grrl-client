@@ -15,6 +15,7 @@ export class EditProfilePageComponent implements OnInit {
   processing = false;
   name: string;
   country: string;
+  image: string;
   email: string;
   languages: string;
   description: string;
@@ -46,6 +47,7 @@ export class EditProfilePageComponent implements OnInit {
       ngOnInit() {
         const user = this.authService.getUser();
 
+        this.image = user.image;
         this.name = user.name;
         this.country = user.country;
         this.email = user.email;
