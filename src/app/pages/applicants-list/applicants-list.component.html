@@ -3,7 +3,7 @@
   
   <div class="sort">
     <p>Sort:</p>
-    <select class="sortButton"(click)="submitForm()" type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
+    <select class="sortButton"(click)="submitForm(from)" type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
       <option value="">See all</option>
       <option value="javascript">Javascript</option>
       <option value="python">Python</option>

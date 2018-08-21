@@ -33,7 +33,7 @@ export class ApplicantsListComponent implements OnInit {
 
    }
 
-   submitForm() {
+   submitForm(form) {
 
     this.userService.getFilteredApplicants(this.programmingLanguages)
       .then((result) => {
