@@ -11,7 +11,6 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./applicants-list.component.css']
 })
 export class ApplicantsListComponent implements OnInit {
-  feedbackEnabled = false;
   error = null;
   processing = false;
   user: any;
@@ -42,7 +41,6 @@ export class ApplicantsListComponent implements OnInit {
       .catch((err) => {
         this.error = err.error;
         this.processing = false;
-        this.feedbackEnabled = false;
       });
 
    }
