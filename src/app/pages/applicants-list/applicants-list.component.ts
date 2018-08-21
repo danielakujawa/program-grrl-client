@@ -11,6 +11,9 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./applicants-list.component.css']
 })
 export class ApplicantsListComponent implements OnInit {
+  feedbackEnabled = false;
+  error = null;
+  processing = false;
   user: any;
   applicants: any;
   programmingLanguages: string;
@@ -37,7 +40,9 @@ export class ApplicantsListComponent implements OnInit {
         this.applicants = result;
       })
       .catch((err) => {
-        console.log(err);
+        this.error = err.error;
+        this.processing = false;
+        this.feedbackEnabled = false;
       });
 
    }
