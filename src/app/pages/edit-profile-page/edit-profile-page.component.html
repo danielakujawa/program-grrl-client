@@ -10,7 +10,7 @@
           <div class="hero-img">
             <img src="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/fabiola.jpg" alt="">
           </div>
-          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/fabiola.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
+          <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/fabiola.jpg" [(ngModel)]="image" #imageField="ngModel" required [disabled]="processing">  
         </div>
         <div class="hero-option">
           <div class="hero-img">
@@ -36,8 +36,10 @@
           </div>
           <input name="image" type="radio" value="http://res.cloudinary.com/dlbsug8tm/image/upload/v1533846339/pg-users/andrea.jpg" [(ngModel)]="image" #imageField="ngModel" [disabled]="processing">  
         </div>
+        <div *ngIf="feedbackEnabled && imageField.errors">
+          <p *ngIf="imageField.errors.required" class="validation">Profile picture required</p>
+        </div>
       </div>
-        
     </div>
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && nameField.errors}">
@@ -88,7 +90,7 @@
       <div *ngIf="user.userType === 'applicant'">
         <label>Programming languages you wanna learn:</label>
       </div>
-      <select multiple type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
+      <select multiple type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" required [disabled]="processing">
         <option value="javascript">Javascript</option>
         <option value="python">Python</option>
         <option value="ruby">Ruby</option>
@@ -96,7 +98,7 @@
         <option value="others">Others</option>
       </select>
       <div *ngIf="feedbackEnabled && programmingLanguagesField.errors">
-        <p *ngIf="programmingLanguagesField.errors.required" class="validation">ProgrammingLanguages required</p>
+        <p *ngIf="programmingLanguagesField.errors.required" class="validation">Programming languages required</p>
       </div>
     </div>
     

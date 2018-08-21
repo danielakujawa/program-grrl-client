@@ -23,12 +23,15 @@
       
       <div class="field" [ngClass]="{'has-error': feedbackEnabled && userTypeField.errors}">
         <div class="radio-button">
-          <input name="userType" type="radio" value="applicant" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+          <input name="userType" type="radio" value="applicant" [(ngModel)]="userType" #userTypeField="ngModel" required [disabled]="processing">
           <p>I wanna learn</p> 
         </div>
         <div class="radio-button">
           <input name="userType" type="radio" value="sponsor" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
           <p>I wanna help others</p> 
+        </div>
+        <div *ngIf="feedbackEnabled && userTypeField.errors">
+          <p *ngIf="userTypeField.errors.required" class="validation">Category required</p>
         </div>
       </div>
       
