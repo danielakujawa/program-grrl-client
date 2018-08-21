@@ -22,13 +22,18 @@
       </div>
       
       <div class="field" [ngClass]="{'has-error': feedbackEnabled && userTypeField.errors}">
-         <label>I wanna learn</label> 
-        <input name="userType" type="radio" value="applicant" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
-        <input name="userType" type="radio" value="sponsor" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+        <div class="radio-button">
+          <input name="userType" type="radio" value="applicant" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+          <p>I wanna learn</p> 
+        </div>
+        <div class="radio-button">
+          <input name="userType" type="radio" value="sponsor" [(ngModel)]="userType" #userTypeField="ngModel" [disabled]="processing">
+          <p>I wanna help others</p> 
+        </div>
       </div>
       
       <div class="field">
-        <button class="button" type="submit" [disabled]="processing">Sign up</button>
+        <button class="button signUp-button" type="submit" [disabled]="processing">Sign up</button>
         <div *ngIf="feedbackEnabled && form.invalid">
           <p class="validation">There are errors in the form, please review the fields</p>
         </div>

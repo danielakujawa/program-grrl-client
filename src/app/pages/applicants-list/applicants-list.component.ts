@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 import { UserService } from '../../services/user.service';
 
 
@@ -12,6 +13,7 @@ import { UserService } from '../../services/user.service';
 export class ApplicantsListComponent implements OnInit {
   user: any;
   applicants: any;
+  programmingLanguages: string;
 
   ngOnInit() {
     }
@@ -19,6 +21,18 @@ export class ApplicantsListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
 
       this.userService.getAllApplicants()
+      .then((result) => {
+        this.applicants = result;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+   }
+
+   submitForm(form) {
+
+    this.userService.getFilteredApplicants(this.programmingLanguages)
       .then((result) => {
         this.applicants = result;
       })

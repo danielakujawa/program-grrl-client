@@ -39,6 +39,14 @@ export class UserService {
     .toPromise();
   }
 
+  getFilteredApplicants(languageFilter): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/applicants/${languageFilter}`, options)
+    .toPromise();
+  }
+
   sponsorOne(applicantId): Promise<any> {
     const options = {
       withCredentials: true

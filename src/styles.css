@@ -394,6 +394,29 @@ form .field.has-error select {
   margin-bottom: 40px;
 }
 
+.radio-button {
+  display: flex;
+  margin-bottom: 20px;
+  height: 21px;
+  align-items: center;
+}
+
+.radio-button input {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: solid 1px #212322;
+  margin: 0px 10px 0px 0px;
+}
+
+.radio-button p {
+  color: #ffffff;
+}
+
+.signUp-button {
+  margin-top: 40px;
+}
+
 /* -- edit page -- */
 
 .select-img {
