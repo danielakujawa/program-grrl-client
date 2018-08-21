@@ -4,14 +4,13 @@
   <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate>
     <select type="programmingLanguages" name="programmingLanguages" [(ngModel)]="programmingLanguages" #programmingLanguagesField="ngModel" [disabled]="processing">
       <option value="" disabled selected>Filter by language</option>
-      <option value="">See all</option>
-      <option value="javascript">Javascript</option>
-      <option value="python">Python</option>
-      <option value="ruby">Ruby</option>
-      <option value="java">Java</option>
-      <option value="others">Others</option>
+      <option type="submit" value="">See all</option>
+      <option type="submit" value="javascript">Javascript</option>
+      <option type="submit" value="python">Python</option>
+      <option type="submit" value="ruby">Ruby</option>
+      <option type="submit" value="java">Java</option>
+      <option type="submit" value="others">Others</option>
     </select>
-    <button class="button" type="submit">Submit</button>
   </form>
 
   <div class="cards-container">
