@@ -476,6 +476,22 @@ form .field.has-error select {
   font-size: 24px;
 }
 
+.sort {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.sort p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sortButton {
+  background-color: #ffffff;
+  border: none;
+  margin-left: 10px;
+}
+
 
 /* -- profile page -- */
 
