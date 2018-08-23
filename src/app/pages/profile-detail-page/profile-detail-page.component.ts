@@ -26,6 +26,8 @@ export class ProfileDetailPageComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const loggedUser = this.authService.getUser();
 
+      this.userCanEdit = false;
+
        if (params.id === loggedUser._id) {
         this.userCanEdit = true;
        }
