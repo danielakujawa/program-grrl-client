@@ -12,7 +12,7 @@
           <span>&nbsp;|&nbsp;</span>
           <a (click)="logout()">LOGOUT</a>
         </div>
-        <div *ngIf="!loading && anon" class="auth-navbar">
+        <div *ngIf="!loading && anon">
           <a [routerLink]="['/login']">LOGIN</a>
           <span>&nbsp;|&nbsp;</span>
           <a [routerLink]="['/signup']">REGISTER</a>
